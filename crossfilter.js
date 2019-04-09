@@ -2308,7 +2308,7 @@ function crossfilter() {
 
         // Reset all group values.
         for (i = 0; i < k; ++i) {
-          groups[i].value = reduceInitial();
+          groups[i].value = reduceInitial(groups[i].key);
         }
 
         // We add all records and then remove filtered records so that reducers
@@ -2351,7 +2351,7 @@ function crossfilter() {
             g = groups[0];
 
         // Reset the singleton group values.
-        g.value = reduceInitial();
+        g.value = reduceInitial(g.key);
 
         // We add all records and then remove filtered records so that reducers
         // can build an 'unfiltered' view even if there are already filters in
